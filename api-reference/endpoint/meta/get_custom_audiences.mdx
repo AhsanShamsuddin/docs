@@ -1,0 +1,45 @@
+---
+title: "Get Custom Audiences"
+api: "POST /meta/get_custom_audiences"
+description: "This endpoint allows you to get custom audiences."
+---
+
+## Request Body
+
+<ParamField body="userId" type="string" required>
+	User Id
+</ParamField>
+<ParamField body="pagination" type="string" required>
+	Pagination
+</ParamField>
+
+## Response
+
+<ResponseField name="success" type="boolean" required>
+	Indicates whether the operation was successful
+</ResponseField>
+
+<ResponseField name="results" type="object" required>
+	<Expandable title="Media Results">
+		<ResponseField name="success" type="boolean" required>
+			Confirms successful media retrieval
+		</ResponseField>
+
+    	<ResponseField name="customAudiences" type="array" required>
+            <Expandable title="Custom Audiences">
+                <ResponseField name="id" type="string" required>
+                    Unique audience identifier
+                </ResponseField>
+
+                <ResponseField name="name" type="string" required>
+                    Audience display name
+                </ResponseField>
+
+                <ResponseField name="subtype" type="string" required >
+                    Audience classification type
+                </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+
+</ResponseField>
