@@ -107,27 +107,26 @@ description: "This endpoint is used to fetch media assets (both images and video
 
 <ResponseExample>
     ```json 200 (IMAGES)
-    {
+   {
         "success":true,
-        "results":
-            {
-                    "success":true,
-                    "media":[
+        "results":{
+            "success":true,
+            "media":[
+                {
+                    "id":"2074273929752253",
+                    "format":[
                         {
-                            "id":"2074273929752253",
-                            "format":[
-                            {
-                                "embed_html":"<iframe allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\" allowfullscreen=\"true\" frameborder=\"0\" height=\"130\" scrolling=\"no\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F120206061579950153%2Fvideos%2F2074273929752253%2F%3Fidorvanity%3D120206061579950153&width=130\" style=\"border:none;overflow:hidden\" width=\"130\"></iframe>",
-                                "filter":"130x130",
-                                "height":130,
-                                "picture":"https://scontent-ord5-2.xx.fbcdn.net/v/t15.13418-10/485495564_1004185174993501_5346987072051659935_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=110&ccb=1-7&_nc_sid=ace027&_nc_eui2=AeGDGk3WT3pgnbEOgYPA0qA9j0cq8_MbHGiPRyrz8xscaORB8i69mT8NjgkZsAV-1UHj81dKp8wq4f6KlO892n68&_nc_ohc=2plK7cMH8cMQ7kNvgEzzPWI&_nc_oc=AdmKLzGx1IckidCC3X0zKeKgWln8v-ypqcG7D-WCNexMZWnaIkaCay1n7_G3OAWv448D9pNaEQAgemarTjeVdQck&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AM_bLsMEAAAA&_nc_gid=OXJsWsYoQ8IpbhdQuDtnFA&oh=00_AYF6Q3bszBdOiBRLnZ9Zjod5opyC0XzMA08z6HhQ6koATg&oe=67E6E01D",
-                                "width":130
-                            }
-                            ]
+                            "embed_html":"<iframe allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\" allowfullscreen=\"true\" frameborder=\"0\" height=\"130\" scrolling=\"no\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F120206061579950153%2Fvideos%2F2074273929752253%2F%3Fidorvanity%3D120206061579950153&width=130\" style=\"border:none;overflow:hidden\" width=\"130\"></iframe>",
+                            "filter":"130x130",
+                            "height":130,
+                            "picture":"https://scontent-ord5-2.xx.fbcdn.net/v/t15.13418-10/485495564_1004185174993501_5346987072051659935_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=110&ccb=1-7&_nc_sid=ace027&_nc_eui2=AeGDGk3WT3pgnbEOgYPA0qA9j0cq8_MbHGiPRyrz8xscaORB8i69mT8NjgkZsAV-1UHj81dKp8wq4f6KlO892n68&_nc_ohc=2plK7cMH8cMQ7kNvgEzzPWI&_nc_oc=AdmKLzGx1IckidCC3X0zKeKgWln8v-ypqcG7D-WCNexMZWnaIkaCay1n7_G3OAWv448D9pNaEQAgemarTjeVdQck&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AM_bLsMEAAAA&_nc_gid=OXJsWsYoQ8IpbhdQuDtnFA&oh=00_AYF6Q3bszBdOiBRLnZ9Zjod5opyC0XzMA08z6HhQ6koATg&oe=67E6E01D",
+                            "width":130
                         }
                     ]
                 }
-            }
+            ]
+        }
+    }
     ```
 
     ```json 200 (VIDEOS)
