@@ -20,25 +20,31 @@
 					{
 						"group": "Authentication",
 						"pages": [
+							"api-reference/endpoint/auth/auth_overview",
 							"api-reference/endpoint/auth/create_user",
 							"api-reference/endpoint/auth/create_advert",
 							"api-reference/endpoint/auth/get_connected_accounts"
 						]
 					},
 					{
-						"group": "Meta Apis",
+						"group": "Audiences",
 						"pages": [
-							"api-reference/endpoint/meta/check_leadform_tos",
-							"api-reference/endpoint/meta/get_ad_account_media",
-							"api-reference/endpoint/meta/create_fb_csv_audience",
-							"api-reference/endpoint/meta/get_fb_page_media",
-							"api-reference/endpoint/meta/get_ig_page_media",
-							"api-reference/endpoint/meta/search_targeting_interests",
-							"api-reference/endpoint/meta/search_targeting_locations",
-							"api-reference/endpoint/meta/get_custom_audiences",
-							"api-reference/endpoint/meta/create_lookalike_audience",
-							"api-reference/endpoint/meta/create_leadform_audience",
-							"api-reference/endpoint/meta/create_page_audience"
+							{
+								"group": "Meta Audience",
+								"pages": [
+									"api-reference/endpoint/meta/create_fb_csv_audience",
+									"api-reference/endpoint/meta/get_custom_audiences",
+									"api-reference/endpoint/meta/create_lookalike_audience",
+									"api-reference/endpoint/meta/create_leadform_audience",
+									"api-reference/endpoint/meta/create_page_audience"
+								]
+							},
+							{
+								"group": "Linkedin Audience",
+								"pages": [
+									"api-reference/endpoint/meta/create_fb_csv_audience"
+								]
+							}
 						]
 					}
 				]
@@ -49,7 +55,8 @@
 		"mdx": {
 			"server": "https://public-api-yifgeucula-uc.a.run.app",
 			"auth": {
-				"method": "bearer"
+				"method": "key",
+				"name": "x-api-key"
 			}
 		}
 	},
