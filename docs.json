@@ -19,6 +19,7 @@
 				"pages": [
 					{
 						"group": "Authentication",
+						"icon": "user",
 						"pages": [
 							"api-reference/endpoint/auth/auth_overview",
 							"api-reference/endpoint/auth/create_user",
@@ -28,10 +29,13 @@
 					},
 					{
 						"group": "Audiences",
+						"icon": "users",
 						"pages": [
 							{
 								"group": "Meta Audience",
+								"icon": "meta",
 								"pages": [
+									"api-reference/endpoint/meta/meta_overview",
 									"api-reference/endpoint/meta/create_fb_csv_audience",
 									"api-reference/endpoint/meta/get_custom_audiences",
 									"api-reference/endpoint/meta/create_lookalike_audience",
@@ -41,6 +45,7 @@
 							},
 							{
 								"group": "Linkedin Audience",
+								"icon": "linkedin",
 								"pages": [
 									"api-reference/endpoint/meta/create_fb_csv_audience"
 								]
