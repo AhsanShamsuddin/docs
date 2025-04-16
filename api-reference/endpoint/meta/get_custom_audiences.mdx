@@ -9,8 +9,10 @@ description: "This endpoint allows you to get custom audiences."
 <ParamField body="userId" type="string" required>
 	User Id
 </ParamField>
-<ParamField body="pagination" type="string" required>
-	Pagination
+<ParamField body="pagination" type="string">
+	If the number of results exceeds the page limit, the response will include
+	pagination links (`next` and `previous`) to help you navigate through the
+	result set.
 </ParamField>
 
 ## Response
@@ -20,9 +22,9 @@ description: "This endpoint allows you to get custom audiences."
 </ResponseField>
 
 <ResponseField name="results" type="object" required>
-	<Expandable title="Media Results">
+	<Expandable title="Results Object">
 		<ResponseField name="success" type="boolean" required>
-			Confirms successful media retrieval
+			Confirms successful audience retrieval
 		</ResponseField>
 
     	<ResponseField name="customAudiences" type="array" required>
@@ -40,6 +42,9 @@ description: "This endpoint allows you to get custom audiences."
                 </ResponseField>
             </Expandable>
         </ResponseField>
+
+    	<ResponseField name="next" type="string" />
+    	<ResponseField name="previous" type="string" />
     </Expandable>
 
 </ResponseField>

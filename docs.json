@@ -47,7 +47,7 @@
 								"group": "Linkedin Audience",
 								"icon": "linkedin",
 								"pages": [
-									"api-reference/endpoint/meta/create_fb_csv_audience"
+									"api-reference/endpoint/linkedin/linkedin_overview"
 								]
 							}
 						]
@@ -63,6 +63,9 @@
 				"method": "key",
 				"name": "x-api-key"
 			}
+		},
+		"playground": {
+			"proxy": false
 		}
 	},
 	"logo": {
@@ -84,9 +87,9 @@
 	},
 	"footer": {
 		"socials": {
-			"x": "https://x.com/mintlify",
-			"github": "https://github.com/mintlify",
-			"linkedin": "https://linkedin.com/company/mintlify"
+			"facebook": "https://www.facebook.com/plaiapp",
+			"instagram": "https://www.facebook.com/plaiapp",
+			"linkedin": "https://www.linkedin.com/company/plaiio"
 		}
 	}
 }
