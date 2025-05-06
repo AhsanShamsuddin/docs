@@ -7,45 +7,49 @@ description: "This endpoint allows you to create a custom audience based on user
 ## Request Body
 
 <ParamField body="userId" type="string" required>
-	User Id
+	User ID, If not already created, make a user on [create user
+	page](/api-reference/endpoint/auth/create_user) first. If already created,
+	retrieve the user ID from [get profile
+	page](/api-reference/endpoint/auth/get_profile).
 </ParamField>
 <ParamField body="name" type="string" required>
-	Lead Form Audience Name
+	Audience Name
 </ParamField>
 <ParamField body="description" type="string" required>
-	Lead Form Audience description
+	Audience description
 </ParamField>
 <ParamField body="type" type="string" required>
-	Type (OPEN)
+	Type = `open`
 </ParamField>
-<ParamField body="fbPageId" type="string" required>
-	Facebook Page Id
-</ParamField>
-<ParamField body="leadFormIds" type="array" required>
+<ParamField body="leadFormIds" type="string[]" required>
 	Lead Form Ids
 </ParamField>
 
 ## Response
 
-<ResponseField name="success" type="boolean" required>
-	Indicates whether the operation was successful
+<ResponseField name="success" type="boolean">
+	Indicates that the HTTP response was successful (status code 200 OK).
 </ResponseField>
 
-<ResponseField name="results" type="object" required>
+<ResponseField name="results" type="object" >
     <Expandable title="Results Object">
-        <ResponseField name="success" type="boolean" required>
-            Indicates whether the operation was successful
+        <ResponseField name="success" type="boolean" >
+			Indicates whether the specific operation or API action was successful.
         </ResponseField>
-        <ResponseField name="audience" type="object" required>
+        <ResponseField name="audience" type="object" >
             <Expandable title="Audience Object">
-                <ResponseField name="id" type="string" required>
+                <ResponseField name="id" type="string" >
                     Unique identifier for lookalike audience
                 </ResponseField>
-                <ResponseField name="name" type="string" required>
+                <ResponseField name="name" type="string" >
                     Name of audience
                 </ResponseField>
             </Expandable>
         </ResponseField>
+
+        <ResponseField name="error" type="string">
+    		Error string if something went wrong
+    	</ResponseField>
     </Expandable>
 
 </ResponseField>

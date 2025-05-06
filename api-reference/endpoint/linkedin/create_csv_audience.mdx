@@ -1,5 +1,5 @@
 ---
-title: "Create Linkedin Audience"
+title: "Create Contact List Audience"
 api: "POST /linkedin/create_csv_audience"
 description: "This endpoint allows you to create a custom audience by uploading a CSV file. The uploaded data is processed and matched against platform records to build a targeted audience for advertising purposes."
 contentType: multipart/form-data
@@ -14,8 +14,10 @@ contentType: multipart/form-data
 </Note>
 
 <ParamField body="userId" type="string" required>
-	The unique identifier of the user or system initiating the audience
-	creation.
+	User ID, If not already created, make a user on [create user
+	page](/api-reference/endpoint/auth/create_user) first. If already created,
+	retrieve the user ID from [get profile
+	page](/api-reference/endpoint/auth/get_profile).
 </ParamField>
 
 <ParamField body="audienceName" type="string" required>
@@ -23,7 +25,7 @@ contentType: multipart/form-data
 	your LinkedIn Ads account.
 </ParamField>
 
-<ParamField body="csvFile" type="file" required>
+<ParamField body="csv" type="file" required>
 
     <Card
         title="Download Sample Contact CSV"
@@ -44,35 +46,39 @@ Upload the audience data file in `.csv` format. This file will be used to match 
 </ParamField>
 
 <ParamField body="type" type="string" required>
-	Specifies the type of audience upload. Accepted values: <br />-
-	`COMPANY_LIST_UPLOAD`: For uploading a list of company names.
-	<br />- `USER_LIST_UPLOAD`: For uploading a list of user identifiers (e.g., emails).
+	Specifies the type of audience upload. Accepted values: COMPANY_LIST_UPLOAD:
+	For uploading a list of company names. or USER_LIST_UPLOAD: For uploading a
+	list of user identifiers (e.g., emails).
 </ParamField>
 
 ## Response
 
-<ResponseField name="success" type="boolean" required>
-	Indicates whether the API operation was successful
+<ResponseField name="success" type="boolean">
+	Indicates that the HTTP response was successful (status code 200 OK).
 </ResponseField>
 
-<ResponseField name="results" type="object" required>
+<ResponseField name="results" type="object" >
 	<Expandable title="Audience Results">
-		<ResponseField name="success" type="boolean" required>
-			Confirms successful audience operation
+		<ResponseField name="success" type="boolean" >
+			Indicates whether the specific operation or API action was successful.
 		</ResponseField>
 
-        <ResponseField name="audience" type="object" required>
+        <ResponseField name="audience" type="object" >
             <Expandable title="Audience Results">
 
-                <ResponseField name="id" type="string" required>
+                <ResponseField name="id" type="string" >
                     Unique identifier for the audience
                 </ResponseField>
 
-                <ResponseField name="name" type="string" required>
+                <ResponseField name="name" type="string" >
                     Name of the audience
                 </ResponseField>
             </Expandable>
         </ResponseField>
+
+        <ResponseField name="error" type="string">
+    		Error string if something went wrong
+    	</ResponseField>
 
     </Expandable>
 

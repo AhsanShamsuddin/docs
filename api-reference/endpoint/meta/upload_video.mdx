@@ -1,7 +1,7 @@
 ---
-title: "Create Advert Link"
-api: "POST /auth/create_link"
-description: "This endpoint generates a link that allows users to seamlessly connect their Ad accounts for the purpose of creating advertisements."
+title: "Upload Video"
+api: "POST /meta/upload_video"
+description: "This endpoint is used to upload your video and get video id."
 ---
 
 ## Request Body
@@ -12,15 +12,11 @@ description: "This endpoint generates a link that allows users to seamlessly con
 	retrieve the user ID from [get profile
 	page](/api-reference/endpoint/auth/get_profile).
 </ParamField>
-<ParamField body="platform" type="string" initialValue="FACEBOOK" required>
-	For Facebook or Instagram, set `platform = FACEBOOK`, for LinkedIn, set
-	`platform = LINKEDIN`.
-</ParamField>
-<ParamField body="redirectUri" type="URL">
-	The URL users are redirected to after linking their accounts
-</ParamField>
-<ParamField body="state" type="string">
-	State, (if you want to send object make sure it is stringify)
+
+<ParamField body="videoUrl" type="string" required>
+	URL pointing to the video file. Must be a publicly accessible HTTPS URL
+	(e.g., Google Cloud Storage URL). Example:
+	"https://storage.googleapis.com/plai-v3.appspot.com/..."
 </ParamField>
 
 ## Response
@@ -30,16 +26,16 @@ description: "This endpoint generates a link that allows users to seamlessly con
 </ResponseField>
 
 <ResponseField name="results" type="object">
-	<Expandable title="Results">
+	<Expandable title="Results Object">
 		<ResponseField name="success" type="boolean">
 			Indicates whether the specific operation or API action was
 			successful.
 		</ResponseField>
-		<ResponseField name="link" type="string">
-			Generated URL with parameters and redirect URL
+		<ResponseField name="videoId" type="string">
+			Unique identifier for the video
 		</ResponseField>
 		<ResponseField name="error" type="string">
-			Error message if something went wrong
+			Error string if something went wrong
 		</ResponseField>
 	</Expandable>
 </ResponseField>

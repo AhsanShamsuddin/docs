@@ -1,5 +1,5 @@
 ---
-title: "Create Facebook Audience"
+title: "Create Contact List Audience"
 api: "POST /meta/create_fb_csv_audience"
 description: "This endpoint allows you to create a custom audience by uploading a CSV file containing user data (such as emails, phone numbers, or other identifiers). The uploaded data is processed and matched against platform records to build a targeted audience for advertising purposes."
 contentType: multipart/form-data
@@ -13,8 +13,12 @@ contentType: multipart/form-data
 </Note>
 
 <ParamField body="userId" type="string" required>
-	User Id
+	User ID, If not already created, make a user on [create user
+	page](/api-reference/endpoint/auth/create_user) first. If already created,
+	retrieve the user ID from [get profile
+	page](/api-reference/endpoint/auth/get_profile).
 </ParamField>
+
 <ParamField body="audienceName" type="string" required>
 	The name of the audience you are creating. This name will be displayed in
 	your Facebook Ads account.
@@ -30,7 +34,7 @@ contentType: multipart/form-data
     </Card>
 
     <Note>
-        Make sure to follow csv guidelines from https://www.facebook.com/business/help/2082575038703844?id=2469097953376494
+        Make sure to follow csv guidelines from [here](https://www.facebook.com/business/help/2082575038703844?id=2469097953376494)
     </Note>
 
 
@@ -38,23 +42,34 @@ contentType: multipart/form-data
 
 </ParamField>
 
+<ParamField body="mode" type="string" default="create">
+	Operation mode for the audience : `create` (default): Create a new audience.
+	`append`: Add more entries to an existing audience. `replace`: Replace all
+	entries in an existing audience. `remove`: Remove entries from an existing
+	audience Required when modifying an existing audience.
+</ParamField>
+
+<ParamField body="audienceId" type="string">
+	The ID of the existing audience to modify. Required when mode is `append`,
+	`replace`, or `remove`.
+</ParamField>
 ## Response
 
-<ResponseField name="success" type="boolean" required>
-	Indicates whether the API operation was successful
+<ResponseField name="success" type="boolean">
+	Indicates that the HTTP response was successful (status code 200 OK).
 </ResponseField>
 
-<ResponseField name="results" type="object" required>
+<ResponseField name="results" type="object" >
 	<Expandable title="Audience Results">
-		<ResponseField name="success" type="boolean" required>
-			Confirms successful audience operation
+		<ResponseField name="success" type="boolean" >
+			Indicates whether the specific operation or API action was successful.
 		</ResponseField>
 
-    	<ResponseField name="audienceId" type="string" required>
+    	<ResponseField name="audienceId" type="string" >
     		Unique identifier for the audience
     	</ResponseField>
 
-    	<ResponseField name="audienceName" type="string" required>
+    	<ResponseField name="audienceName" type="string" >
     		Name of the audience
     	</ResponseField>
 
@@ -62,17 +77,21 @@ contentType: multipart/form-data
     		<Note>Empty object when no invalid entries exist</Note>
     	</ResponseField>
 
-    	<ResponseField name="num_invalid_entries" type="number" required>
+    	<ResponseField name="num_invalid_entries" type="number" >
     		Count of invalid entries in the audience
     	</ResponseField>
 
-    	<ResponseField name="num_received" type="number" required>
+    	<ResponseField name="num_received" type="number" >
     		Total number of entries received
     	</ResponseField>
 
-    	<ResponseField name="session_id" type="string" required>
+    	<ResponseField name="session_id" type="string" >
     		Processing session identifier
     	</ResponseField>
     </Expandable>
+
+    <ResponseField name="error" type="string">
+    		Error string if something went wrong
+    </ResponseField>
 
 </ResponseField>
