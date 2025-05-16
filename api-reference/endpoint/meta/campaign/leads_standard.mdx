@@ -68,7 +68,8 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     	</ParamField>
 
     	<ParamField body="callToAction" type="string" required>
-    		Call to Action
+    		Supported call to action types are `LEARN_MORE`, `SIGN_UP`, `DOWNLOAD`, `APPLY_NOW`,
+    		`SUBSCRIBE`, `GET_QUOTE`, `BOOK_TRAVEL`
     	</ParamField>
 
 
@@ -120,6 +121,12 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <ParamField body="leads_form_id" type="string" required>
 	Facebook Lead Form ID
+</ParamField>
+
+<ParamField body="callToAction" type="string">
+	<Note>Use this with carousel ads only</Note>
+	Supported call to action types are `LEARN_MORE`, `SIGN_UP`, `DOWNLOAD`, `APPLY_NOW`,
+	`SUBSCRIBE`, `GET_QUOTE`, `BOOK_TRAVEL`
 </ParamField>
 
 ## Response
