@@ -20,36 +20,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Traffic Goal, campaignType is `LINK_CLICKS`
 </ParamField>
 
-<ParamField body="carousel" type="object[]">
-	<Expandable title="Carousel Array">
-		<ParamField body="name" type="string" required>
-			Carousel Name
-		</ParamField>
-		<ParamField body="description" type="string">
-			Carousel Description
-		</ParamField>
-		<ParamField body="picture" type="string">
-			Carousel Picture URL
-		</ParamField>
-		<ParamField body="video_id" type="string">
-			Carousel Video ID
-		</ParamField>
-		<ParamField body="link" type="string">
-			Carousel Link URL
-		</ParamField>
-	</Expandable>
-
-</ParamField>
-
-<ParamField body="primaryText" type="object[]">
-	<Note>Use this with carousel ads only</Note>
-	<Expandable title="Primary Text Array">
-		<ParamField body="text" type="string" required>
-			Main ad copy text
-		</ParamField>
-	</Expandable>
-</ParamField>
-
 <ParamField body="isDynamicCreative" type="boolean" >
 	Whether it's dynamic creative, useable with images/videos
 
@@ -60,46 +30,81 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="multipleCreatives" type="object[]">
+<Tabs>
+	<Tab title="Image/Video Ads">
+		<ParamField body="multipleCreatives" type="object[]">
 
-    <Expandable title="Multiple Creative Configuration">
-    	<ParamField body="url" type="string" required>
-    		Destination URL
-    	</ParamField>
-
-    	<ParamField body="callToAction" type="string" required>
-    		Supported call to action types are: `LEARN_MORE`, `SHOP_NOW`, `SIGN_UP`,
-    		`DOWNLOAD`, `WATCH_MORE`, `APPLY_NOW`, `SUBSCRIBE`, `GET_QUOTE`,
-    		`CONTACT_US`, `ORDER_NOW`, `REQUEST_TIME`, `GET_SHOWTIMES`, `LISTEN_NOW`,
-    		`SEE_MENU`, `BOOK_TRAVEL`
-    	</ParamField>
-
-    	<ParamField body="primaryText" type="string" required>
-    		Primary Text
-    	</ParamField>
-
-    	<ParamField body="headline1" type="string">
-    		Headline
-    	</ParamField>
-
-    	<ParamField body="image" type="string">
-    		Image URL
-    	</ParamField>
-
-    	<ParamField body="video" type="object">
-    		<Expandable title="Video Data">
-    			<ParamField body="video_id" type="string">
-    				Video ID
+    		<Expandable title="Multiple Creative Configuration">
+    			<ParamField body="url" type="string" required>
+    				Destination URL
     			</ParamField>
-    			<ParamField body="thumbnail_url" type="string">
-    				Thumbnail URL
+
+    			<ParamField body="callToAction" type="string" required>
+    				Supported call to action types are: `LEARN_MORE`, `SHOP_NOW`, `SIGN_UP`,
+    				`DOWNLOAD`, `WATCH_MORE`, `APPLY_NOW`, `SUBSCRIBE`, `GET_QUOTE`,
+    				`CONTACT_US`, `ORDER_NOW`, `REQUEST_TIME`, `GET_SHOWTIMES`, `LISTEN_NOW`,
+    				`SEE_MENU`, `BOOK_TRAVEL`
+    			</ParamField>
+
+    			<ParamField body="primaryText" type="string" required>
+    				Primary Text
+    			</ParamField>
+
+    			<ParamField body="headline1" type="string">
+    				Headline
+    			</ParamField>
+
+    			<ParamField body="image" type="string">
+    				Image URL
+    			</ParamField>
+
+    			<ParamField body="video" type="object">
+    				<Expandable title="Video Data">
+    					<ParamField body="video_id" type="string">
+    						Video ID
+    					</ParamField>
+    					<ParamField body="thumbnail_url" type="string">
+    						Thumbnail URL
+    					</ParamField>
+    				</Expandable>
+    			</ParamField>
+
+    		</Expandable>
+    	</ParamField>
+    </Tab>
+
+    <Tab title="Carousel Ads">
+    	<ParamField body="carousel" type="object[]">
+    		<Expandable title="Carousel Array">
+    			<ParamField body="name" type="string" required>
+    				Carousel Name
+    			</ParamField>
+    			<ParamField body="description" type="string">
+    				Carousel Description
+    			</ParamField>
+    			<ParamField body="picture" type="string">
+    				Carousel Picture URL
+    			</ParamField>
+    			<ParamField body="video_id" type="string">
+    				Carousel Video ID
+    			</ParamField>
+    			<ParamField body="link" type="string">
+    				Carousel Link URL
+    			</ParamField>
+    		</Expandable>
+
+    	</ParamField>
+
+    	<ParamField body="primaryText" type="object[]">
+    		<Expandable title="Primary Text Array">
+    			<ParamField body="text" type="string" required>
+    				Main ad copy text
     			</ParamField>
     		</Expandable>
     	</ParamField>
+    </Tab>
 
-    </Expandable>
-
-</ParamField>
+</Tabs>
 
 <ParamField body="callToAction" type="string">
 	<Note>Use this with carousel ads only</Note>
