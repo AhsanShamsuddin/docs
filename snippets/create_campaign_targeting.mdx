@@ -16,6 +16,8 @@
 </ParamField>
 
 <ParamField body="locations" type="array">
+	Get locations data from
+	[here](/api-reference/endpoint/meta/search_targeting_locations)
 	<Expandable title="Location Targeting Array">
 		<ParamField body="id" type="string" required>
 			Facebook location ID
@@ -28,11 +30,16 @@
 		</ParamField>
 		<ParamField body="distance_unit" type="string" required>
 			Distance unit (mile, etc.)
+		</ParamField>
+		<ParamField body="radius" type="string" required>
+			Radius value
 		</ParamField>
 	</Expandable>
 </ParamField>
 
 <ParamField body="excludedLocations" type="array">
+	Get excluded locations data from
+	[here](/api-reference/endpoint/meta/search_targeting_locations)
 	<Expandable title="Location Targeting Array">
 		<ParamField body="id" type="string" required>
 			Facebook location ID
@@ -45,6 +52,9 @@
 		</ParamField>
 		<ParamField body="distance_unit" type="string" required>
 			Distance unit (mile, etc.)
+		</ParamField>
+		<ParamField body="radius" type="string" required>
+			Radius value
 		</ParamField>
 	</Expandable>
 </ParamField>
