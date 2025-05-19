@@ -20,7 +20,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Lead Goal, campaignType is `LEAD_GENERATION`
 </ParamField>
 
-<ParamField body="images" type="array">
+<ParamField body="images" type="object[]">
 	<Expandable title="Image Assets Array">
 		<ParamField body="url" type="string" required>
 			URL for image asset
@@ -29,7 +29,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="videos" type="array">
+<ParamField body="videos" type="object[]">
 	<Expandable title="Video Assets Array">
 		<ParamField body="video_id" type="string" required>
 			Facebook video ID, get facebook video id from [here](/api-reference/endpoint/meta/get_ad_account_media)
@@ -41,7 +41,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="primaryText" type="array">
+<ParamField body="primaryText" type="object[]">
 	<Expandable title="Primary Text Array">
 		<ParamField body="text" type="string" required>
 			Main ad copy text
@@ -50,7 +50,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="headline1" type="array">
+<ParamField body="headline1" type="object[]">
 	<Expandable title="Headline Variations Array">
 		<ParamField body="text" type="string" required>
 			Headline text variation

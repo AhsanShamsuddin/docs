@@ -20,7 +20,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Boost Post Goal, campaignType is `POST_ENGAGEMENT`
 </ParamField>
 
-<ParamField body="conversations" type="array">
+<ParamField body="conversations" type="object[]">
 	<Expandable title="Conversations Array">
 		<ParamField body="title" type="string" required>
 			Conversation Title
@@ -28,7 +28,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	</Expandable>
 
     <Note>
-    	Only For Messenger Use and When Call to Action is `Send Message`
+    	Only For Messenger Use and When Call to Action is `SEND_MESSAGE`
     </Note>
 
 </ParamField>
@@ -37,16 +37,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	Greeting Text
 
     <Note>
-    	Use When Call to Action is `Send Message`
+    	Use When Call to Action is `SEND_MESSAGE`
     </Note>
 
 </ParamField>
 
-<ParamField body="messagingApps" type="array" >
+<ParamField body="messagingApps" type="string[]" >
 	Messaging apps = `MESSENGER`, `INSTAGRAM`, `WHATSAPP`
 
     <Note>
-    	Use When Call to Action is `Send Message`
+    	Use When Call to Action is `SEND_MESSAGE`
     </Note>
 
 </ParamField>

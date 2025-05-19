@@ -20,7 +20,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Conversions Goal, campaignType is `CONVERSIONS`
 </ParamField>
 
-<ParamField body="carousel" type="array">
+<ParamField body="carousel" type="object[]">
 	<Expandable title="Carousel Array">
 		<ParamField body="name" type="string" required>
 			Carousel Name
@@ -41,7 +41,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="primaryText" type="array">
+<ParamField body="primaryText" type="object[]">
 	<Note>Use this with carousel ads only</Note>
 	<Expandable title="Primary Text Array">
 		<ParamField body="text" type="string" required>
@@ -60,7 +60,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="multipleCreatives" type="array">
+<ParamField body="multipleCreatives" type="object[]">
 
     <Expandable title="Multiple Creative Configuration">
     	<ParamField body="url" type="string" required>
@@ -107,7 +107,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     		Greeting Text
     	</ParamField>
 
-    	<ParamField body="conversations" type="array">
+    	<ParamField body="conversations" type="object[]">
     		<Expandable title="Conversations Array">
     			<ParamField body="title" type="string" required>
     				Conversation Title

@@ -66,7 +66,7 @@ playground: "none"
 
 ### Dynamic Ads Parameters
 
-<ParamField body="images" type="array">
+<ParamField body="images" type="object[]">
 	<Expandable title="Image Assets Array">
 		<ParamField body="url" type="string" required>
 			URL for image asset
@@ -75,7 +75,7 @@ playground: "none"
 
 </ParamField>
 
-<ParamField body="videos" type="array">
+<ParamField body="videos" type="object[]">
 	<Expandable title="Video Assets Array">
 		<ParamField body="video_id" type="string" required>
 			Facebook video ID
@@ -87,7 +87,7 @@ playground: "none"
 
 </ParamField>
 
-<ParamField body="primaryText" type="array">
+<ParamField body="primaryText" type="object[]">
 	<Expandable title="Primary Text Array">
 		<ParamField body="text" type="string" required>
 			Main ad copy text
@@ -96,7 +96,7 @@ playground: "none"
 
 </ParamField>
 
-<ParamField body="headline1" type="array">
+<ParamField body="headline1" type="object[]">
 	<Expandable title="Headline Variations Array">
 		<ParamField body="text" type="string" required>
 			Headline text variation
@@ -118,7 +118,7 @@ playground: "none"
 
 ### Standard Ads Parameters
 
-<ParamField body="carousel" type="array">
+<ParamField body="carousel" type="object[]">
 	<Expandable title="Carousel Array">
 		<ParamField body="name" type="string" required>
 			Carousel Name
@@ -149,7 +149,7 @@ playground: "none"
 
 </ParamField>
 
-<ParamField body="multipleCreatives" type="array">
+<ParamField body="multipleCreatives" type="object[]">
 
     <Expandable title="Multiple Creative Configuration">
     	<ParamField body="url" type="string" required>
@@ -190,7 +190,7 @@ playground: "none"
     		Greeting Text
     	</ParamField>
 
-    	<ParamField body="conversations" type="array">
+    	<ParamField body="conversations" type="object[]">
     		<Expandable title="Conversations Array">
     			<ParamField body="title" type="string" required>
     				Conversation Title
@@ -230,7 +230,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="locations" type="array">
+<ParamField body="locations" type="object[]">
 	<Expandable title="Location Targeting Array">
 		<ParamField body="id" type="string" required>
 			Facebook location ID
@@ -247,7 +247,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="excludedLocations" type="array">
+<ParamField body="excludedLocations" type="object[]">
 	<Expandable title="Location Targeting Array">
 		<ParamField body="id" type="string" required>
 			Facebook location ID
@@ -264,7 +264,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="proximityTargeting" type="array">
+<ParamField body="proximityTargeting" type="object[]">
 	<Expandable title="Proximity Targeting Array">
 		<ParamField body="countryName" type="string" required>
 			2 char country code like `US`, `UK`, etc.
@@ -284,7 +284,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="interests" type="array">
+<ParamField body="interests" type="object[]">
 	<Expandable title="Interests Array">
 		<ParamField body="id" type="string" required>
 			Interest Id
@@ -298,7 +298,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="narrowInterests" type="array">
+<ParamField body="narrowInterests" type="object[]">
 	<Expandable title="Narrow Interests Array">
 		<ParamField body="id" type="string" required>
 			Interest Id
@@ -312,7 +312,7 @@ playground: "none"
 	</Expandable>
 </ParamField>
 
-<ParamField body="furtherInterests" type="array">
+<ParamField body="furtherInterests" type="object[]">
 	<Expandable title="Further Interests Array">
 		<ParamField body="id" type="string" required>
 			Interest Id
@@ -331,7 +331,7 @@ playground: "none"
 	[here](https://developers.facebook.com/docs/marketing-apis/reference/ad-account/targeting-specs#locales)
 </ParamField>
 
-<ParamField body="audienceId" type="array">
+<ParamField body="audienceId" type="object[]">
 	Array of audience IDs, you can get the audienceId from list of audiences
 	[here](/api-reference/endpoint/meta/get_custom_audiences)
 </ParamField>

@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Ad Campaign"
 api: "POST /meta/create_campaign"
-description: "This endpoint is used to create a campaign for traffic dynamic ads. Traffic ads are designed to drive users to a specific destination like a website, app, or messaging platform."
+description: "This endpoint is used to create a campaign for traffic dynamic ads. Traffic ads are designed to drive users to a specific destination like a website."
 ---
 
 import CampaignParams from "/snippets/create_campaign_params.mdx";
@@ -20,8 +20,11 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Traffic Goal, campaignType is `LINK_CLICKS`
 </ParamField>
 
-<ParamField body="images" type="array">
-	<Expandable title="Image Assets Array">
+<ParamField body="images" type="object[]">
+	<Note>
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
+	</Note>
+	<Expandable title="Image Assets Object">
 		<ParamField body="url" type="string" required>
 			URL for image asset
 		</ParamField>
@@ -29,8 +32,11 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="videos" type="array">
-	<Expandable title="Video Assets Array">
+<ParamField body="videos" type="object[]">
+	<Note>
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 video is required if image is not provided
+	</Note>
+	<Expandable title="Video Assets Object">
 		<ParamField body="video_id" type="string" required>
 			Facebook video ID, get facebook video id from [here](/api-reference/endpoint/meta/get_ad_account_media)
 		</ParamField>
@@ -41,16 +47,21 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="primaryText" type="array">
-	<Expandable title="Primary Text Array">
+<ParamField body="primaryText" type="object[]" required>
+	<Note>
+		You can add up to 5 primary text variations, atleast 1 primary text is
+		required
+	</Note>
+	<Expandable title="Primary Text Object">
 		<ParamField body="text" type="string" required>
 			Main ad copy text
 		</ParamField>
 	</Expandable>
 </ParamField>
 
-<ParamField body="headline1" type="array">
-	<Expandable title="Headline Variations Array">
+<ParamField body="headline1" type="object[]">
+	<Note>You can include up to 5 headline variations. Each headline can be up to 40 characters long.</Note>
+	<Expandable title="Headline Variations Object">
 		<ParamField body="text" type="string" required>
 			Headline text variation
 		</ParamField>
