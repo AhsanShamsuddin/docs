@@ -1,7 +1,7 @@
 ---
-title: "Standard Ad Campaign"
+title: "Non Dynamic Ad"
 api: "POST /meta/create_campaign"
-description: "This endpoint is used to create a campaign for traffic standard ads. Traffic ads are designed to drive users to a specific destination like a website."
+description: "This endpoint is used to create a campaign for traffic non dynamic ads. Traffic ads are designed to drive users to a specific destination like a website."
 ---
 
 import CampaignParams from "/snippets/create_campaign_params.mdx";
@@ -14,7 +14,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <CampaignTargeting />
 
-### Standard Ads Parameters
+### Non Dynamic Ads Parameters
 
 <ParamField body="campaignType" type="string" required>
 	For Traffic Goal, campaignType is `LINK_CLICKS`
@@ -55,10 +55,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     			</ParamField>
 
     			<ParamField body="image" type="string">
+    				<Note>
+    					Image URL is required if video is not provided
+    				</Note>
     				Image URL
     			</ParamField>
 
     			<ParamField body="video" type="object">
+    				<Note>
+    					Video ID is required if image is not provided
+    				</Note>
     				<Expandable title="Video Data">
     					<ParamField body="video_id" type="string">
     						Video ID
@@ -83,9 +89,15 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     				Carousel Description
     			</ParamField>
     			<ParamField body="picture" type="string">
+    				<Note>
+    					Picture URL is required if video is not provided
+    				</Note>
     				Carousel Picture URL
     			</ParamField>
     			<ParamField body="video_id" type="string">
+    				<Note>
+    					Video ID is required if picture is not provided
+    				</Note>
     				Carousel Video ID
     			</ParamField>
     			<ParamField body="link" type="string">
@@ -102,16 +114,17 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     			</ParamField>
     		</Expandable>
     	</ParamField>
+
+    	<ParamField body="callToAction" type="string">
+    		Supported call to action types are `LEARN_MORE`, `SHOP_NOW`, `SIGN_UP`,
+    		`DOWNLOAD`, `WATCH_MORE`, `APPLY_NOW`, `SUBSCRIBE`, `GET_QUOTE`,
+    		`CONTACT_US`, `ORDER_NOW`, `REQUEST_TIME`, `GET_SHOWTIMES`, `LISTEN_NOW`,
+    		`SEE_MENU`, `BOOK_TRAVEL`
+    	</ParamField>
+
     </Tab>
 
 </Tabs>
-
-<ParamField body="callToAction" type="string">
-	<Note>Use this with carousel ads only</Note>
-	Supported call to action types are `LEARN_MORE`, `SHOP_NOW`, `SIGN_UP`, `DOWNLOAD`,
-	`WATCH_MORE`, `APPLY_NOW`, `SUBSCRIBE`, `GET_QUOTE`, `CONTACT_US`, `ORDER_NOW`,
-	`REQUEST_TIME`, `GET_SHOWTIMES`, `LISTEN_NOW`, `SEE_MENU`, `BOOK_TRAVEL`
-</ParamField>
 
 ## Response
 

@@ -119,7 +119,8 @@
 									"api-reference/endpoint/meta/search_targeting_interests",
 									"api-reference/endpoint/meta/search_targeting_locations",
 									"api-reference/endpoint/meta/get_pixels_list",
-									"api-reference/endpoint/meta/get_targeting_systems_lookup"
+									"api-reference/endpoint/meta/get_targeting_systems_lookup",
+									"api-reference/endpoint/meta/get_targeting_locales"
 								]
 							},
 							{
