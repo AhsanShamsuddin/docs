@@ -82,9 +82,27 @@
 													"api-reference/endpoint/meta/campaign/conversion_standard"
 												]
 											},
-											"api-reference/endpoint/meta/campaign/engagement",
-											"api-reference/endpoint/meta/campaign/phone_call",
-											"api-reference/endpoint/meta/campaign/boost_post"
+											{
+												"group": "Message Ads",
+												"icon": "message",
+												"pages": [
+													"api-reference/endpoint/meta/campaign/engagement"
+												]
+											},
+											{
+												"group": "Phone Call",
+												"icon": "phone",
+												"pages": [
+													"api-reference/endpoint/meta/campaign/phone_call"
+												]
+											},
+											{
+												"group": "Boost Post",
+												"icon": "arrow-up-right",
+												"pages": [
+													"api-reference/endpoint/meta/campaign/boost_post"
+												]
+											}
 										]
 									},
 									"api-reference/endpoint/meta/get_campaign_insights",
