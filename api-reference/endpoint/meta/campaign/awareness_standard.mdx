@@ -21,6 +21,18 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Awareness Goal, campaignType is `OUTCOME_AWARENESS`
 </ParamField>
 
+<ParamField body="optimizationGoal" type="string" required>
+	Supported values `REACH`, `THRUPLAY`
+	<Note>
+    	- Use Optimization Goal `REACH`, When you want to increase reach of your
+    	campaign and show your ads to as many people as possible.
+
+    	- Use Optimization Goal `THRUPLAY`, When you want to show your ads to
+    	people who will watch the entire video.
+    </Note>
+
+</ParamField>
+
 <Tabs>
 	<Tab title="Image/Video Ads">
 		<ParamField body="isDynamicCreative" type="boolean" >
@@ -138,18 +150,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     </Tab>
 
 </Tabs>
-
-<ParamField body="optimizationGoal" type="string" required>
-	Supported values `REACH`, `THRUPLAY`
-	<Note>
-    	- Use Optimization Goal `REACH`, When you want to increase reach of your
-    	campaign and show your ads to as many people as possible.
-
-    	- Use Optimization Goal `THRUPLAY`, When you want to show your ads to
-    	people who will watch the entire video.
-    </Note>
-
-</ParamField>
 
 ## Response
 

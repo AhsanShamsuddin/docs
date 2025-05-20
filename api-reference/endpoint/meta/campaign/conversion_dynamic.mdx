@@ -21,6 +21,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Conversions Goal, campaignType is `CONVERSIONS`
 </ParamField>
 
+<ParamField body="pixelId" type="string" required>
+	Facebook Pixel ID for conversion tracking
+</ParamField>
+
+<ParamField body="conversionGoal" type="string" required>
+	Campaign conversion goal type, get the list of conversion goals from
+	[here](/api-reference/endpoint/meta/get_custom_conversions), use
+	`CONVERSIONS` in campaignType to get the list of conversion goals.
+</ParamField>
+
 <ParamField body="images" type="object[]">
 	<Note>
 		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
@@ -71,16 +81,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 		</ParamField>
 	</Expandable>
 
-</ParamField>
-
-<ParamField body="pixelId" type="string" required>
-	Facebook Pixel ID for conversion tracking
-</ParamField>
-
-<ParamField body="conversionGoal" type="string" required>
-	Campaign conversion goal type, get the list of conversion goals from
-	[here](/api-reference/endpoint/meta/get_custom_conversions), use
-	`CONVERSIONS` in campaignType to get the list of conversion goals.
 </ParamField>
 
 <ParamField body="callToAction" type="string" required>

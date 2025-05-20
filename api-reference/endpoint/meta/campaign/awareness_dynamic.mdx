@@ -21,6 +21,18 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Awareness Goal, campaignType is `OUTCOME_AWARENESS`
 </ParamField>
 
+<ParamField body="optimizationGoal" type="string" required>
+	Supported values `REACH`, `THRUPLAY`
+	<Note>
+    	- Use Optimization Goal `REACH`, When you want to increase reach of your
+    	campaign and show your ads to as many people as possible.
+
+    	- Use Optimization Goal `THRUPLAY`, When you want to show your ads to
+    	people who will watch the entire video.
+    </Note>
+
+</ParamField>
+
 <ParamField body="images" type="object[]">
 	<Note>
 		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
@@ -70,18 +82,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 			Headline text variation
 		</ParamField>
 	</Expandable>
-
-</ParamField>
-
-<ParamField body="optimizationGoal" type="string" required>
-	Supported values `REACH`, `THRUPLAY`
-	<Note>
-    	- Use Optimization Goal `REACH`, When you want to increase reach of your
-    	campaign and show your ads to as many people as possible.
-
-    	- Use Optimization Goal `THRUPLAY`, When you want to show your ads to
-    	people who will watch the entire video.
-    </Note>
 
 </ParamField>
 

@@ -21,6 +21,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Sales Goal, campaignType is `OUTCOME_SALES`
 </ParamField>
 
+<ParamField body="pixelId" type="string" required>
+	Facebook Pixel ID for conversion tracking
+</ParamField>
+
+<ParamField body="conversionGoal" type="string" required>
+	Campaign conversion goal type, get the list of conversion goals from
+	[here](/api-reference/endpoint/meta/get_custom_conversions), use
+	`OUTCOME_SALES` in campaignType to get the list of conversion goals.
+</ParamField>
+
 <Tabs>
 	<Tab title="Image/Video Ads">
 		<ParamField body="isDynamicCreative" type="boolean" >
@@ -146,16 +156,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     </Tab>
 
 </Tabs>
-
-<ParamField body="pixelId" type="string" required>
-	Facebook Pixel ID for conversion tracking
-</ParamField>
-
-<ParamField body="conversionGoal" type="string" required>
-	Campaign conversion goal type, get the list of conversion goals from
-	[here](/api-reference/endpoint/meta/get_custom_conversions), use
-	`OUTCOME_SALES` in campaignType to get the list of conversion goals.
-</ParamField>
 
 ## Response
 
