@@ -96,6 +96,18 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	Phone Number
 </ParamField>
 
+<ParamField body="greetingText" type="string">
+	Greeting Text
+</ParamField>
+
+<ParamField body="conversations" type="object[]">
+	<Expandable title="Conversations Array">
+		<ParamField body="title" type="string" required>
+			Conversation Title
+		</ParamField>
+	</Expandable>
+</ParamField>
+
 <ParamField body="isCallAd" type="boolean">
 	Whether it's a call ad, if true, `phoneNumber` is required
 </ParamField>
