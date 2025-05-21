@@ -21,37 +21,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Boost Post Goal, campaignType is `POST_ENGAGEMENT`
 </ParamField>
 
-<ParamField body="conversations" type="object[]">
-	<Expandable title="Conversations Array">
-		<ParamField body="title" type="string" required>
-			Conversation Title
-		</ParamField>
-	</Expandable>
-
-    <Note>
-    	Only For Messenger Use and When Call to Action is `SEND_MESSAGE`
-    </Note>
-
-</ParamField>
-
-<ParamField body="greetingText" type="string">
-	Greeting Text
-
-    <Note>
-    	Use When Call to Action is `SEND_MESSAGE`
-    </Note>
-
-</ParamField>
-
-<ParamField body="messagingApps" type="string[]" >
-	Messaging apps = `MESSENGER`, `INSTAGRAM`, `WHATSAPP`
-
-    <Note>
-    	Use When Call to Action is `SEND_MESSAGE`
-    </Note>
-
-</ParamField>
-
 <ParamField body="pagePostId" type="string" required>
 	Facebook page post ID, you can get post id from
 	[here](/api-reference/endpoint/meta/get_page_posts)
