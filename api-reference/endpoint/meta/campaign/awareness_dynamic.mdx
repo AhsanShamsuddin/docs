@@ -34,6 +34,9 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 </ParamField>
 
 <ParamField body="images" type="object[]">
+	<Warning>
+		Images are only supported for optimization goal `REACH`.
+	</Warning>
 	<Note>
 		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided.
 		- Minimum Image Size: 400x400px

@@ -415,6 +415,11 @@
     		type="string"
     	>
     		Leads Form ID (Required for `LEAD_GENERATION` Campaign)
+    		<Warning>
+    			You can get the lead form id from [get lead
+    			forms](/api-reference/endpoint/meta/get_lead_forms)
+    			endpoint.
+    		</Warning>
     	</ParamField>
 
     	<ParamField body="primaryText" type="string" required>
@@ -490,6 +495,11 @@
 				<ResponseField name="leadFormId" type="string">
 					The unique identifier for the lead form associated with this
 					campaign.
+					<Warning>
+						You can get the lead form id from [get lead
+						forms](/api-reference/endpoint/meta/get_lead_forms)
+						endpoint.
+					</Warning>
 				</ResponseField>
 				<ResponseField name="campaignId" type="string">
 					The unique identifier for the campaign.

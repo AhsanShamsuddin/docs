@@ -21,117 +21,75 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	For Engagement Goal, campaignType is `OUTCOME_ENGAGEMENT`
 </ParamField>
 
-<ParamField body="images" type="object[]">
-	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided.
-		- Minimum Image Size: 400x400px
-		- Supported Aspect Ratios: 1:1, 16:9, 9:16
-	</Note>
-	<Expandable title="Image Assets Array">
-		<ParamField body="url" type="string" required>
-			URL for image asset
-		</ParamField>
-	</Expandable>
-
-</ParamField>
-
-<ParamField body="videos" type="object[]">
-	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 video is required if image is not provided.
-	</Note>
-	<Expandable title="Video Assets Array">
-		<ParamField body="video_id" type="string" required>
-			Facebook video ID, get facebook video id from [here](/api-reference/endpoint/meta/get_ad_account_media)
-		</ParamField>
-		<ParamField body="thumbnail_url" type="string" required>
-			URL for video thumbnail image, get video thumbnail url from [here](/api-reference/endpoint/meta/get_ad_account_media)
-		</ParamField>
-	</Expandable>
-
-</ParamField>
-
-<ParamField body="carousel" type="object[]">
-	<Warning>
-		- Atleast 2 carousel items are required.
-		- Maximum 10 carousel items are allowed.
-	</Warning>
-	<Expandable title="Carousel Array">
-		<ParamField body="name" type="string" required>
-			Carousel Name
-		</ParamField>
-		<ParamField body="description" type="string">
-			Carousel Description
-		</ParamField>
-		<ParamField body="picture" type="string">
-			Carousel Picture URL
-		</ParamField>
-		<ParamField body="video_id" type="string">
-			Carousel Video ID
-		</ParamField>
-		<ParamField body="link" type="string">
-			Carousel Link URL
-		</ParamField>
-	</Expandable>
-
-</ParamField>
-
-<ParamField body="primaryText" type="object[]">
-	<Note>You can add up to 5 primary text variations, atleast 1 primary text is required</Note>
-	<Expandable title="Primary Text Array">
-		<ParamField body="text" type="string" required>
-			Main ad copy text
-		</ParamField>
-	</Expandable>
-
-</ParamField>
-
-<ParamField body="headlines" type="object[]">
-	<Note>You can include up to 5 headline variations.</Note>
-	<Expandable title="Headline Variations Array">
-		<ParamField body="text" type="string" required>
-			Headline text variation
-		</ParamField>
-	</Expandable>
-	<Warning>
-		Headline max length is 255 characters. however, for non-English
-		languages, the limit is determined by the number of bytes rather than
-		the number of visible characters
-	</Warning>
-</ParamField>
-
 <ParamField body="messagingApps" type="string[]" required>
 	Messaging apps = `MESSENGER`, `INSTAGRAM`, `WHATSAPP`
 </ParamField>
 
-<ParamField body="phoneNumber" type="string" required>
-	Phone Number
-</ParamField>
-
-<ParamField body="greetingText" type="string" required>
-	Greeting Text
-</ParamField>
-
-<ParamField body="conversations" type="object[]" required>
-	<Expandable title="Conversations Array">
-		<ParamField body="title" type="string" required>
-			Conversation Title
+<ParamField body="multipleCreatives" type="object[]">
+	<Warning>
+		- Atleast 1 creative is required.
+		- Maximum 10 creatives are allowed.
+	</Warning>
+	<Expandable title="Multiple Creative Configuration">
+		<ParamField body="url" type="string" required>
+			Destination URL
 		</ParamField>
-	</Expandable>
-</ParamField>
 
-<ParamField body="isDynamicCreative" type="boolean" >
-	Whether it's dynamic creative, useable with images/videos
+    	<ParamField body="primaryText" type="string" required>
+    		Primary Text
+    	</ParamField>
 
-    <Note>
-    	`isDynamicCreative` should be `false` for Engagement Goal
-    </Note>
+    	<ParamField body="headlines" type="string">
+    		Headline
+    		<Warning>Headline max length is 255 characters. however, for non-English languages, the limit is determined by the number of bytes rather than the number of visible characters</Warning>
+    	</ParamField>
 
-</ParamField>
+    	<ParamField body="phoneNumber" type="string" >
+    		Phone Number
+    	</ParamField>
 
-<ParamField body="callToAction" type="string" required>
-	Supported call to action types are: `SEND_MESSAGE`, `BOOK_NOW`,
-	`CONTACT_US`, `GET_PROMOTIONS`, `GET_QUOTE`, `INQUIRE_NOW`, `LEARN_MORE`,
-	`SHOP_NOW`, `SIGN_UP`, `SUBSCRIBE`, `ORDER_NOW`, `APPLY_NOW`
+    	<ParamField body="image" type="string">
+    		<Note>
+    			Image URL is required if video is not provided
+    			- Minimum Image Size: 400x400px
+    			- Supported Aspect Ratios: 1:1, 16:9, 9:16
+    		</Note>
+    		Image URL
+    	</ParamField>
+
+    	<ParamField body="video" type="object">
+    		<Note>
+    			Video ID is required if image is not provided
+    		</Note>
+    		<Expandable title="Video Data">
+    			<ParamField body="video_id" type="string">
+    				Video ID
+    			</ParamField>
+    			<ParamField body="thumbnail_url" type="string">
+    				Thumbnail URL
+    			</ParamField>
+    		</Expandable>
+    	</ParamField>
+
+    	<ParamField body="greetingText" type="string" required>
+    		Greeting Text
+    	</ParamField>
+
+    	<ParamField body="conversations" type="object[]" required>
+    		<Expandable title="Conversations Array">
+    			<ParamField body="title" type="string" required>
+    				Conversation Title
+    			</ParamField>
+    		</Expandable>
+    	</ParamField>
+
+    	<ParamField body="callToAction" type="string" required>
+    		Supported call to action types are: `SEND_MESSAGE`, `BOOK_NOW`,
+    		`CONTACT_US`, `GET_PROMOTIONS`, `GET_QUOTE`, `INQUIRE_NOW`, `LEARN_MORE`,
+    		`SHOP_NOW`, `SIGN_UP`, `SUBSCRIBE`, `ORDER_NOW`, `APPLY_NOW`
+    	</ParamField>
+    </Expandable>
+
 </ParamField>
 
 ## Response
