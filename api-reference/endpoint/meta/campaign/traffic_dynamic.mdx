@@ -23,7 +23,9 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <ParamField body="images" type="object[]">
 	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided.
+		- Minimum Image Size: 400x400px
+		- Supported Aspect Ratios: 1:1, 16:9, 9:16
 	</Note>
 	<Expandable title="Image Assets Object">
 		<ParamField body="url" type="string" required>
@@ -35,7 +37,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <ParamField body="videos" type="object[]">
 	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 video is required if image is not provided
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 video is required if image is not provided.
 	</Note>
 	<Expandable title="Video Assets Object">
 		<ParamField body="video_id" type="string" required>
@@ -60,14 +62,18 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 	</Expandable>
 </ParamField>
 
-<ParamField body="headline1" type="object[]">
+<ParamField body="headlines" type="object[]">
 	<Note>You can include up to 5 headline variations.</Note>
 	<Expandable title="Headline Variations Object">
 		<ParamField body="text" type="string" required>
 			Headline text variation
 		</ParamField>
 	</Expandable>
-
+	<Warning>
+		Headline max length is 255 characters. however, for non-English
+		languages, the limit is determined by the number of bytes rather than
+		the number of visible characters
+	</Warning>
 </ParamField>
 
 <ParamField body="callToAction" type="string" required>

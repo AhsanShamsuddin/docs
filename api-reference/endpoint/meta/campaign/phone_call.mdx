@@ -23,7 +23,9 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <ParamField body="images" type="object[]">
 	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided.
+		- Minimum Image Size: 400x400px
+		- Supported Aspect Ratios: 1:1, 16:9, 9:16
 	</Note>
 	<Expandable title="Image Assets Array">
 		<ParamField body="url" type="string" required>
@@ -35,7 +37,7 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 <ParamField body="videos" type="object[]">
 	<Note>
-		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided
+		You can add up to 10 total images and videos in one dynamic ad, atlease 1 image is required if video is not provided.
 	</Note>
 	<Expandable title="Video Assets Array">
 		<ParamField body="video_id" type="string" required>
@@ -49,6 +51,10 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 </ParamField>
 
 <ParamField body="carousel" type="object[]">
+	<Warning>
+		- Atleast 2 carousel items are required.
+		- Maximum 10 carousel items are allowed.
+	</Warning>
 	<Expandable title="Carousel Array">
 		<ParamField body="name" type="string" required>
 			Carousel Name
@@ -81,24 +87,22 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 
 </ParamField>
 
-<ParamField body="headline1" type="object[]">
-	<Note>
-		You can include up to 5 headline variations.
-	</Note>
+<ParamField body="headlines" type="object[]">
+	<Note>You can include up to 5 headline variations.</Note>
 	<Expandable title="Headline Variations Array">
 		<ParamField body="text" type="string" required>
 			Headline text variation
 		</ParamField>
 	</Expandable>
-
+	<Warning>
+		Headline max length is 255 characters. however, for non-English
+		languages, the limit is determined by the number of bytes rather than
+		the number of visible characters
+	</Warning>
 </ParamField>
 
-<ParamField body="phoneNumber" type="string">
+<ParamField body="phoneNumber" type="string" required>
 	Phone Number
-</ParamField>
-
-<ParamField body="greetingText" type="string">
-	Greeting Text
 </ParamField>
 
 <ParamField body="conversations" type="object[]">
@@ -107,10 +111,6 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
 			Conversation Title
 		</ParamField>
 	</Expandable>
-</ParamField>
-
-<ParamField body="isCallAd" type="boolean">
-	Whether it's a call ad, if true, `phoneNumber` is required
 </ParamField>
 
 ## Response

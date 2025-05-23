@@ -137,7 +137,7 @@
 
 </ParamField>
 
-<ParamField body="headline1" type="object[]">
+<ParamField body="headlines" type="object[]">
 	<Expandable title="Headline Variations Array">
 		<ParamField body="text" type="string" required>
 			Headline text variation
@@ -147,6 +147,7 @@
     <Note>
     	Headline not required for `POST_ENGAGEMENT` campaign type. For other campaign types, it is required.
     </Note>
+    <Warning>Headline max length is 255 characters. however, for non-English languages, the limit is determined by the number of bytes rather than the number of visible characters</Warning>
 
 </ParamField>
 
@@ -420,12 +421,17 @@
     		Primary Text
     	</ParamField>
 
-    	<ParamField body="headline1" type="string">
+    	<ParamField body="headlines" type="string">
     		Headline
+    		<Warning>Headline max length is 255 characters. however, for non-English languages, the limit is determined by the number of bytes rather than the number of visible characters</Warning>
     	</ParamField>
 
     	<ParamField body="image" type="string">
     		Image URL
+    		<Warning>
+    			- Minimum Image Size: 400x400px
+    			- Supported Aspect Ratios: 1:1, 16:9, 9:16
+    		</Warning>
     	</ParamField>
 
     	<ParamField body="video" type="object">

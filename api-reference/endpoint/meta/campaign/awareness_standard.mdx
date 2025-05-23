@@ -43,6 +43,10 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     		</Note>
     	</ParamField>
     	<ParamField body="multipleCreatives" type="object[]">
+			<Warning>
+				- Atleast 1 creative is required.
+				- Maximum 10 creatives are allowed.
+			</Warning>
     		<Expandable title="Multiple Creative Configuration">
     			<ParamField body="url" type="string" required>
     				Destination URL
@@ -58,13 +62,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     				Primary Text
     			</ParamField>
 
-    			<ParamField body="headline1" type="string">
+    			<ParamField body="headlines" type="string">
     				Headline
+    			    <Warning>Headline max length is 255 characters. however, for non-English languages, the limit is determined by the number of bytes rather than the number of visible characters</Warning>
     			</ParamField>
 
     			<ParamField body="image" type="string">
     				<Note>
     					Image URL is required if video is not provided
+    					- Minimum Image Size: 400x400px
+    					- Supported Aspect Ratios: 1:1, 16:9, 9:16
     				</Note>
     				Image URL
     			</ParamField>
@@ -83,30 +90,16 @@ import CampaignResponse from "/snippets/create_campaign_response.mdx";
     				</Expandable>
     			</ParamField>
 
-    			{/* <ParamField body="phoneNumber" type="string">
-    				Phone Number (for Call Ads)
-    			</ParamField>
-
-    			<ParamField
-    				body="greetingText"
-    				type="string"
-    			>
-    				Greeting Text
-    			</ParamField>
-
-    			<ParamField body="conversations" type="object[]">
-    				<Expandable title="Conversations Array">
-    					<ParamField body="title" type="string" required>
-    						Conversation Title
-    					</ParamField>
-    				</Expandable>
-    			</ParamField> */}
     		</Expandable>
     	</ParamField>
     </Tab>
 
     <Tab title="Carousel Ads">
     <ParamField body="carousel" type="object[]">
+    		<Warning>
+    			- Atleast 2 carousel items are required.
+    			- Maximum 10 carousel items are allowed.
+    		</Warning>
     		<Expandable title="Carousel Array">
     			<ParamField body="name" type="string" required>
     				Carousel Name

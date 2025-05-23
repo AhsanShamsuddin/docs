@@ -1,7 +1,7 @@
 ### Targeting Parameters
 
-<ParamField body="audienceName" type="string" required>
-	Name of the target audience
+<ParamField body="adSetName" type="string" required>
+	Name of the ad set audience
 </ParamField>
 
 <ParamField body="gender" type="string">
@@ -189,11 +189,19 @@
 </ParamField>
 
 <ParamField body="userDevices" type="string[]">
-	Device targeting, you can get the list of devices from
+	Device targeting, you have to send the device name in string array, you can
+	get the list of devices from
 	[here](/api-reference/endpoint/meta/get_targeting_systems_lookup)
+
+    <Note>
+    	Make sure to choose right operating system for the device.
+    	- for eg. If the user device is iphone, then you have to send `ios` in user operating system.
+    </Note>
+
 </ParamField>
 
 <ParamField body="userOS" type="string[]">
-	Operating system targeting, you can get the list of operating systems from
+	Operating system targeting, you have to send the os name in string array,
+	you can get the list of operating systems from
 	[here](/api-reference/endpoint/meta/get_targeting_systems_lookup)
 </ParamField>
